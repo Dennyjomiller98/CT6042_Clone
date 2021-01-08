@@ -40,6 +40,7 @@ public class Logging extends HttpServlet
 		boolean loggedIn = conn.attemptLogin(userDocument);
 		if(loggedIn)
 		{
+			LOG.info("Login");
 			request.getSession(true).setAttribute("loggingResults", "You logged in.");
 		}
 		else
