@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CT6042_Clone:war exploded">
+    <output-path>$PROJECT_DIR$/target/CT6042_Clone-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>CT6042_Clone</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CT6042_Clone" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:3.12.7" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: com.oracle:ojdbc7:12.2.0.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/CT6042_Clone-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="CT6042_Clone/web/Web" />
+    </root>
+  </artifact>
+</component>

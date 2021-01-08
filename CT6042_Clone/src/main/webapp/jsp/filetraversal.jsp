@@ -36,8 +36,38 @@
         <div class="mainBody">
             <p>
                 This page is for Path Traversal/File Traversal, showing how this vulnerability can be exploited. <br/>
-                In the following Form below, please upload a file. The name of the File is key to exploitation.
+                In the following Form below, please input the image you would like to access. <br/><br/>
+
+                <strong>Valid Data:</strong><br/>
+                UoGLogo.png<br/><br/>
+                <strong>Malicious Data:</strong><br/>
+                /Config/log4j.properties<br/><br/>
+
+                As shown, without restrictions on file protection if user input is required, and without limiting the filetype allowed to be retrieved, Traversal to access other resources is possible.
             </p>
+
+            <form action="${pageContext.request.contextPath}/servlets/FileTraversal" method="POST">
+                <label for="imageChoice">Image Choice:</label>
+                <input type="text" name="imageChoice" id="imageChoice" required/>
+                <br/>
+                <input type="reset" value="Clear">
+                <input type="submit" value="Submit">
+            </form>
+
+            <div class="results">
+                <p>Found File results would appear below.</p>
+                <% String fileTraversalResults = null;
+                    if (session.getAttribute("fileTraversalResults") != null)
+                    {
+                        fileTraversalResults = session.getAttribute("fileTraversalResults").toString();
+                    }
+                    if(fileTraversalResults != null) {%>
+                <strong>
+                    <%=fileTraversalResults%> <br/>
+                </strong>
+                (End of returned data)
+                <%}%>
+            </div>
         </div>
     </body>
 </html>
