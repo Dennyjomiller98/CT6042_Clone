@@ -36,10 +36,10 @@
         <div class="mainBody">
             <p>
                 This page is for Path Traversal/File Traversal, showing how this vulnerability can be exploited. <br/>
-                In the following Form below, please input the image you would like to view. <br/><br/>
+                In the following Form below, please input the image you would like to access. <br/><br/>
 
                 <strong>Valid Data:</strong><br/>
-                UogLogo.png<br/><br/>
+                UoGLogo.png<br/><br/>
                 <strong>Malicious Data:</strong><br/>
                 /Config/log4j.properties<br/><br/>
 

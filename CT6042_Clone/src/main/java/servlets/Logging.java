@@ -30,6 +30,11 @@ public class Logging extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	{
+		LOG.trace("Starting logging");
+		LOG.debug("Starting logging");
+		LOG.info("Starting logging");
+		LOG.error("Starting logging");
+		LOG.warn("Starting logging");
 		//Standard login attempt for Logging Attack.
 		Document userDocument = new Document();
 		userDocument.append("Username", request.getParameter("username"));
