@@ -17,6 +17,7 @@ public class Injection extends HttpServlet
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	{
+		LOG.info("Attempting to redirect to Injection Attack page");
 		try
 		{
 			response.sendRedirect(request.getContextPath() + "/jsp/injection.jsp");
@@ -30,6 +31,7 @@ public class Injection extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	{
+		LOG.info("Attempting form request for Injection Attack page.");
 		Document userDocument = new Document();
 		userDocument.append("Username", request.getParameter("username"));
 
@@ -42,6 +44,7 @@ public class Injection extends HttpServlet
 
 		try
 		{
+			LOG.info("Attempting redirect to injection page");
 			response.sendRedirect(request.getContextPath() + "/jsp/injection.jsp");
 		}
 		catch (IOException e)

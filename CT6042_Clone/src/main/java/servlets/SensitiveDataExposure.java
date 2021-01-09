@@ -23,7 +23,8 @@ public class SensitiveDataExposure extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	{
-		//Standard login attempt for Logging Attack.
+		LOG.info("Attempting form request for SensitiveDataExposure attack.");
+		//Standard login attempt for SDA Attack.
 		Document userDocument = new Document();
 		userDocument.append("Username", request.getParameter("username"));
 		userDocument.append("Password", request.getParameter("pword"));
@@ -35,11 +36,13 @@ public class SensitiveDataExposure extends HttpServlet
 			String loggedInInfo = conn.sensitiveData(userDocument);
 			if(loggedInInfo != null)
 			{
-				request.getSession(true).setAttribute("sensitiveDataResults", "Username: " + userDocument.get("Username") + " successfully logged in. Information is: " + loggedInInfo);
+				LOG.info("Logged in information retrieved successfully");
+				request.getSession(true).setAttribute("sensitiveDataResults", "Username: " + userDocument.get("Username"));
 			}
 			else
 			{
-				request.getSession(true).setAttribute("sensitiveDataResults", "Password: " + userDocument.get("Password") +  " does not match for User: " + userDocument.get("Username") + ". Any logging shown in the Log file could lead to Data exposure.");
+				LOG.warn("Alerting user on failed Login attempt.");
+				request.getSession(true).setAttribute("sensitiveDataResults", "Login credentials are incorrect for User: " + userDocument.get("Username") + ". Any logging shown in the Log file could lead to Data exposure.");
 			}
 
 			redirectMe(request, response);
@@ -52,6 +55,7 @@ public class SensitiveDataExposure extends HttpServlet
 
 	private void redirectMe(HttpServletRequest request, HttpServletResponse response)
 	{
+		LOG.info("Attempting Redirect to Sensitive Data Exposure attack page");
 		try
 		{
 			response.sendRedirect(request.getContextPath() + "/jsp/sensitivedataexposure.jsp");

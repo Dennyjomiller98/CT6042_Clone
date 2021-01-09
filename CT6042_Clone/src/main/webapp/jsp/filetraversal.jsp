@@ -40,10 +40,11 @@
 
                 <strong>Valid Data:</strong><br/>
                 UoGLogo.png<br/><br/>
+
                 <strong>Malicious Data:</strong><br/>
                 /Config/log4j.properties<br/><br/>
 
-                As shown, without restrictions on file protection if user input is required, and without limiting the filetype allowed to be retrieved, Traversal to access other resources is possible.
+                As shown using the examples above, the Malicious Data is now unavailable to access other resources, limiting the filetype to .img, .png, or .jpg/.jpeg . <br/>
             </p>
 
             <form action="${pageContext.request.contextPath}/servlets/FileTraversal" method="POST">

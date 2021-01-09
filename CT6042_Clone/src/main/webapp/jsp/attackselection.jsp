@@ -41,7 +41,8 @@
 
             <p>
                 Welcome. From here, please select a Vulnerability to view more information and an example of each Security Risk. <br/>
-                <strong>Note:</strong> This Site only shows examples of the vulnerabilities, no fixes for each Security Risk are included here (Available in other Project).
+                <strong>Note:</strong> This Site only shows solutions for reducing vulnerabilities, proving the malicious attempts are now prevented. <br/>
+                To attempt an attack, you will need to look at the "Vulnerabilities" Branch (or the CT6042_s1707031_Alternatives_Source_Code), available here: <a>https://github.com/Dennyjomiller98/CT6042_Clone/tree/Alternatives</a>
             </p>
 
             <div>

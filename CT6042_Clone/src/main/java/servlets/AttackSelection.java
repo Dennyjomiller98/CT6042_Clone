@@ -15,6 +15,7 @@ public class AttackSelection extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     {
+        LOG.info("Redirecting to Attack Selection page");
         try
         {
             response.sendRedirect(request.getContextPath() + "/jsp/attackselection.jsp");

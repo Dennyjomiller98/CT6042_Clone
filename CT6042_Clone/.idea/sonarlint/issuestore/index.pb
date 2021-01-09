@@ -41,3 +41,23 @@ O
 src/main/webapp/jsp/logging.jsp,e\6\e6b143335bad9decc4144549c1189e539c1706f6
 U
 %src/main/webapp/jsp/filetraversal.jsp,e\f\ef531c57258139b22e7beb3ea1f4a0a65d2f2190
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+Z
+*src/main/resources/Config/log4j.properties,6\2\6271b1a61c062e51c9a94485c4246d212160fa3a
+O
+target/classes/log4j.properties,f\9\f999cf84ddbf4408702ce6efea49a8266db5d1e8
+q
+Atarget/CT6042_Clone-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties,8\f\8f21082243c880e6e86bd77bd8727368bf1f2b17
+W
+'src/main/webapp/jsp/attackselection.jsp,0\a\0aad9c551329874e06b5faba8917e2d08baab9ba
+Q
+!src/main/webapp/jsp/injection.jsp,8\7\87df5eef2ecec02f8603cf453f05c2c93f15c6d3
+]
+-src/main/webapp/jsp/sensitivedataexposure.jsp,1\1\11ce2c5facb9b2f6f42461b2429d206a1de204d0
+K
+src/main/webapp/jsp/xss.jsp,6\e\6eca1cfcf4f1beb33c9572c26b0d250f17ca912c
+[
++src/main/java/servlets/AttackSelection.java,c\d\cdf8181e9a20bbdf57f4710aba0cefdd1bf13847
+U
+%src/main/java/servlets/Injection.java,d\2\d2addaae94f89ed7cdf6f17cc79777e93dbce6d8

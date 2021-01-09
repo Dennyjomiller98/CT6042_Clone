@@ -17,6 +17,7 @@ public class Logging extends HttpServlet
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	{
+		LOG.info("Attempting redirect to Logging Attack page");
 		try
 		{
 			response.sendRedirect(request.getContextPath() + "/jsp/logging.jsp");
@@ -30,6 +31,7 @@ public class Logging extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 	{
+		LOG.info("Attempting form request for Logging attack page.");
 		//Standard login attempt for Logging Attack.
 		Document userDocument = new Document();
 		userDocument.append("Username", request.getParameter("username"));
@@ -40,16 +42,18 @@ public class Logging extends HttpServlet
 		boolean loggedIn = conn.attemptLogin(userDocument);
 		if(loggedIn)
 		{
-			LOG.info("Login");
+			LOG.info("Login successful");
 			request.getSession(true).setAttribute("loggingResults", "You logged in.");
 		}
 		else
 		{
+			LOG.warn("An Error has occurred when User: " + request.getParameter("username") + " attempted to log in. " + System.currentTimeMillis());
 			request.getSession(true).setAttribute("loggingResults", "Login Failure, if this was a potential hack, no logging supplied to help.");
 		}
 
 		try
 		{
+			LOG.info("Attempting redirect to Logging Attack page");
 			response.sendRedirect(request.getContextPath() + "/jsp/logging.jsp");
 		}
 		catch (IOException e)

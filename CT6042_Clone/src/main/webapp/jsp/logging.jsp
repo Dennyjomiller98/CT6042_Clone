@@ -36,14 +36,12 @@
 
         <div class="mainBody">
             <p>
-                This page is for Insecure and Insufficient Logging, showing how this vulnerability can be exploited. <br/>
+                This page is for Insecure and Insufficient Logging. <br/>
                 <strong>Note: </strong>The custom Log File to view Outputted information is available in the Glassfish Domain file (With the name 'logOutput.log')<br/>
                 In the following Form below, attempt to log in. <br/><br/>
                 <strong>Valid Credentials:</strong><br/>
                 Username: Test <br/>
                 Password: Test <br/><br/>
-
-                By using valid credentials, the user would log in successfully. If invalid credentials are used, potentially due to an attack, insufficient logging will not help understand the attack vector.
             </p>
 
             <form action="${pageContext.request.contextPath}/servlets/Logging" method="POST">
@@ -58,7 +56,11 @@
             </form>
 
             <div class="results">
-                <p>Any logging results would appear here. On an insecure site, insufficient logging will not appear, showing the security flaw for login attempts or other crucial information in the event of an attack.</p>
+                <p>
+                    Any logging results appear below.<br/>
+                    By using both Valid or invalid credentials, there is now sufficient logging to help track session login or login attempts. <br/>
+                    This can aid developers/companies in the circumstance of an attack, as the detailed logs can provide relevant information, including timestamps and any errors/exceptions the application runs in to, which may be the cause for the security flaw attack.
+                </p>
                 <% String loggingResults = null;
                     if (session.getAttribute("loggingResults") != null)
                     {
