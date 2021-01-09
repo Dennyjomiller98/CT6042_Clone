@@ -35,8 +35,8 @@
 
         <div class="mainBody">
             <p>
-                This page is for Injection, showing how this vulnerability can be exploited. In the following Form below, please submit credentials. (These credentials should be in the System due to Database Startup Scripts): <br/><br/>
-                <strong>Username: Test </strong><br/>
+                This page is for an SQL Injection attack. In the following Form below, please submit credentials. (These credentials should be in the System due to Database Startup Script): <br/><br/>
+                <strong>Username: Test </strong><br/><br/>
                 By using SQL in the form, you can break the query to access data unrelated to the user above. This can also allow data manipulation of the database. <br/><br/>
                 <strong>Injection Example:</strong><br/>
                 T' OR 1=1 --'
@@ -51,8 +51,7 @@
 
             <div class="results">
                 <p>
-                    If using Test/Test credentials, you should only get a single users information. By using Injection, you can retrieve anything the Injection wants. <br/>
-                    After Submission, Injection results will appear here: <br/> <br/>
+                    As proven with the examples shown above, using pre-prepared statements, along with the implementation of JavaBeans, it is safer to perform SQL queries, as the Malicious attempt no longer works. <br/>
                     <% String injectionResults = null;
                         if (session.getAttribute("injectionResults") != null)
                         {

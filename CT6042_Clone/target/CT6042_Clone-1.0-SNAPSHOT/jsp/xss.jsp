@@ -51,6 +51,9 @@
             </form>
 
             <div class="results">
+                <p>
+                    With the help of HtmlEncoding, the Form is secure against the above Malicious attack. <br/>
+                </p>
                 Anything inserted above should appear here below: <br/>
                 <% String xssResults = null;
                     if (session.getAttribute("xssResults") != null)

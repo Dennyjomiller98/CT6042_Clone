@@ -51,10 +51,6 @@
 
                 Username: WrongUser <br/>
                 Password: Test <br/><br/>
-
-                Even giving away information such as a users' name can be crucial to sensitive data exposure. <br/>
-                Any login attempt results would appear below the form. On an insecure site, crucial information may be shown to the wrong user, leading to sensitive data exposure (potentially opening up the application for an attack). <br/>
-                In compliance to GDPR, user information should not be shared and should be managed securely. Because of this, users names should not be provided in the logs.
             </p>
 
             <form action="${pageContext.request.contextPath}/servlets/SensitiveDataExposure" method="POST">
@@ -69,6 +65,11 @@
             </form>
 
             <div class="results">
+                <p>
+                    With the help of Beans and the correct sanitization of Data, users information is now secure in compliance to GDPR. <br/>
+                    By using User Keys or User IDs, no personal information can be displayed, whilst still providing more security. <br/>
+                    With the help of Encryption/Decryption, User information can be stored in the database with an added layer of security in the event of a data breach, exposing data. This is better than allowing an attacker to expose raw (or md5 hashed) information.
+                </p>
                 <% String sensitiveDataResults = null;
                     if (session.getAttribute("sensitiveDataResults") != null)
                     {
